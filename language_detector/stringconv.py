@@ -1,11 +1,8 @@
-#given a string of words 'abc def ghi' where the separator is a " ", will format
-#this string into a list with the following format: ['abc', 'def', 'ghi'],
-#so that the result can be added to the LANGUAGES list in languages,py
-
-#format them into 'word1', 'word2'
-#can use to create new dictionaries
 
 def string_conv(string):
+    """given a string of words 'abc def ghi' where the separator is a " ", 
+    will format into a list with the following format: ['abc', 'def', 'ghi'],
+    so that the result can be added to the LANGUAGES list in languages,py"""
     word = "" #initialize empty string
     
     result = [] #initialize list that will contain the formatted strings

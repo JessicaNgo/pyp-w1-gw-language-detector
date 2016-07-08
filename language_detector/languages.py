@@ -1,7 +1,6 @@
 # -*- coding: UTF-8 -*-
 """This file contains the definition of all languages supported by the program."""
 LANGUAGES = [
-    #  include your extra languages here
             {
                 'name': 'Spanish',
                 'common_words': [
