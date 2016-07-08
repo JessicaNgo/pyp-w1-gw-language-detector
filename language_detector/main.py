@@ -5,7 +5,7 @@ from .languages import LANGUAGES
         #and sends list of counts to which_language
     #which_language returns the index of the highest number in language_count in languages.py
     #detect_language uses this index to find language name in lang_list
-
+#trying to pull request.
 def detect_language(text, languages=LANGUAGES):
     """Detects language name based on # of matches of common words to words in text"""
     
@@ -18,8 +18,6 @@ def detect_language(text, languages=LANGUAGES):
     for language in range(len(languages)): 
         
         lang_match_counts.append(0) #initialize the language match word count for the language
-        #lang_name = languages[language]['name'] #access language name
-        #lang_list.append(lang_name) #add language name to list
         common_word_set = languages[language]['common_words'] 
         #access to language's common words
         
@@ -32,7 +30,6 @@ def detect_language(text, languages=LANGUAGES):
     #send lang_match_counts to function that matches it to the language,
     #depending on its index
     index_of_language = which_language(lang_match_counts)
-    #return lang_list[index_of_language]
     return languages[index_of_language]['name']
 def which_language(match_counts):
     '''helps determines the language by returning the index of match_counts that has
