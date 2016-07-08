@@ -17,13 +17,14 @@ def string_conv(string):
             result.append(word)
             word = "" #clear word
     return result   
-    
-convert = '''the of to and a in is it you that he was for on are with as I his 
-             they be at one have this from or had by hot word but what some we 
-             can out other were all there when up use your how said an each she
-             '''
-             
-outputme = string_conv(convert)
+
+#example below    
+#convert = '''the of to and a in is it you that he was for on are with as I his 
+#             they be at one have this from or had by hot word but what some we 
+#             can out other were all there when up use your how said an each she
+#             '''
+#outputme = string_conv(convert)
+
 #can append to LANGUAGES after, add support for more languages if you want!
     
         
