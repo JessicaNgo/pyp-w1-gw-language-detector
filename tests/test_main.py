@@ -31,6 +31,18 @@ class TestLanguageDetector(unittest.TestCase):
                     'bin', 'noch', 'dir', 'uns', 'sich', 'nur',
                     'einen', 'kann', 'dem'
                 ]
+            },
+            {
+                'name': 'English',
+                'common_words': [
+                    'the', 'of', 'to', 'and', 'a', 'in', 'is', 'it', 'you', 
+                    'that', 'he', 'was', 'for', 'on', 'are', 'with', 'as', 'I',
+                    'his', 'they', 'be', 'at', 'one', 'have', 'this', 'from',
+                    'or', 'had', 'by', 'hot', 'word', 'but', 'what', 'some',
+                    'we', 'can', 'out', 'other', 'were', 'all', 'there', 'when',
+                    'up', 'use', 'your', 'how', 'said', 'an', 
+                    'each', 'she'    
+                ]
             }
         ]
         self.texts = {
@@ -52,7 +64,16 @@ class TestLanguageDetector(unittest.TestCase):
                 erzielte. Inzwischen hat Messi als einziger Spieler mehr als 300
                 Erstligatore erzielt und ist damit Rekordtorschütze
                 der Primera División.
-                """
+                """,
+            "english": """
+                Lionel Andrés "Leo" Messi (born 24 June 1987) is an Argentine 
+                professional footballer who plays as a forward for Spanish club 
+                Barcelona. Often considered the best player in the world and 
+                rated by many in the sport as the greatest of all time, Messi is 
+                the only football player in history to win five FIFA Ballons d'Or, 
+                four of which he won consecutively, and the first player to win 
+                three European Golden Shoes.
+            """
         }
 
     def test_detect_language_spanish_with_our_language_specification(self):
@@ -70,3 +91,11 @@ class TestLanguageDetector(unittest.TestCase):
     def test_detect_language_german_with_module_language_specification(self):
         result = detect_language(self.texts["german"], LANGUAGES)
         self.assertEqual(result.lower(), 'german')
+    
+    def test_detect_language_english_with_our_language_specification(self):
+        result = detect_language(self.texts["english"], self.languages)
+        self.assertEqual(result.lower(), 'english')
+        
+    def test_detect_language_english_with_module_language_specification(self):
+        result = detect_language(self.texts["english"], LANGUAGES)
+        self.assertEqual(result.lower(), 'english')
