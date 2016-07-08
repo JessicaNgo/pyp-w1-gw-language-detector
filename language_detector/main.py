@@ -1,12 +1,10 @@
 from .languages import LANGUAGES
 
 def detect_language(text, languages=LANGUAGES):
-    """Detects language name based on # of matches of common words to words in text"""
+    '''Detects language name based on # of matches of common words to words in text'''
     
     #lists that will hold counts for each language
-    #lang_list = [] #list of names of languages
-    lang_match_counts = []  #list of matched word counts for each language
-                            #the index of each word count value matches index in lang_list
+    lang_match_counts = [] 
     
     #iterate sequentially through languages list
     for language in range(len(languages)): 
